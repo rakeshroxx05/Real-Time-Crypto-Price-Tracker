@@ -1,0 +1,246 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(120deg, #0f0c29, #302b63, #24243e);
+  background-size: 400% 400%;
+  animation: gradientBG 10s ease infinite;
+  color: white;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.app {
+  width: 90%;
+  max-width: 1000px;
+  margin: auto;
+  text-align: center;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 2.8em;
+  margin-bottom: 5px;
+  color: #00ffd5;
+}
+
+.tagline {
+  margin-bottom: 20px;
+  color: #ddd;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.controls input,
+.controls select,
+.controls button {
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+}
+
+.controls button {
+  background: #00ffd5;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.crypto-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+}
+
+.card {
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(8px);
+  border-radius: 15px;
+  padding: 15px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #00ffd5;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.card-header h2 {
+  color: #ffdd00;
+  margin: 0;
+  flex: 1;
+  text-align: left;
+  font-size: 1.3em;
+}
+
+.favorite-btn {
+  font-size: 1.5em;
+  cursor: pointer;
+  color: #888;
+  transition: all 0.3s;
+  user-select: none;
+}
+
+.favorite-btn.active {
+  color: #ffdd00;
+  animation: pulse 0.3s;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+.sentiment {
+  font-size: 1.5em;
+}
+
+.price {
+  font-size: 1.5em;
+  color: #00ff90;
+}
+
+.change {
+  margin-top: 5px;
+  font-size: 0.9em;
+}
+
+.volatility {
+  color: #ffa500;
+  font-size: 0.85em;
+  margin-top: 5px;
+}
+
+.market-cap {
+  color: #00ffd5;
+  font-size: 0.85em;
+  margin-top: 5px;
+}
+
+.holdings {
+  color: #ffdd00;
+  font-size: 0.9em;
+  margin-top: 5px;
+  font-weight: bold;
+}
+
+.card-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+
+.amount-input {
+  flex: 1;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #00ffd5;
+  background: rgba(0, 255, 213, 0.1);
+  color: white;
+  font-size: 0.9em;
+  min-width: 80px;
+}
+
+.amount-input::placeholder {
+  color: #888;
+}
+
+.card-actions button {
+  flex: 1;
+  padding: 8px;
+  border-radius: 6px;
+  border: none;
+  background: #00ffd5;
+  color: #000;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 0.85em;
+  min-width: 90px;
+  transition: all 0.3s;
+}
+
+.card-actions button:hover {
+  background: #00ff90;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 255, 213, 0.3);
+}
+
+.portfolio-summary {
+  background: rgba(0, 255, 213, 0.2);
+  border: 2px solid #00ffd5;
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  backdrop-filter: blur(8px);
+}
+
+.portfolio-summary h3 {
+  color: #00ffd5;
+  font-size: 1.8em;
+  margin: 0;
+}
+
+.stats-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.stat-box {
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(8px);
+  border-radius: 15px;
+  padding: 15px;
+  border: 2px solid;
+}
+
+.stat-box.gainers {
+  border-color: #00ff90;
+}
+
+.stat-box.losers {
+  border-color: #ff6b6b;
+}
+
+.stat-box h4 {
+  margin-bottom: 10px;
+  font-size: 1.1em;
+}
+
+.stat-box span {
+  display: block;
+  padding: 5px;
+  font-size: 0.9em;
+  margin: 3px 0;
+}
+
+.coins-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+}
